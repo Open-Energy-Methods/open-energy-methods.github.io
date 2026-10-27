@@ -3,190 +3,284 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0C2B47">
-  <meta name="author" content="Open Energy Methods">
-  <meta name="description" content="Open Energy Methods is an independent open-source engineering research workbench for models, experiments and computational methods, created by Abhijith Sivaprasadan.">
+  <meta name="theme-color" content="#F6F1E5">
+  <meta name="author" content="Abhijith Sivaprasadan">
+  <meta name="description" content="Open Energy Methods is an independent open-source engineering research workbench created and maintained by Abhijith Sivaprasadan. Explore energy models, reproducible experiments, tools and field notes.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Open Energy Methods">
-  <meta property="og:title" content="Open Energy Methods — Questions worth checking">
-  <meta property="og:description" content="One engineer's open workbench for energy models, numerical methods and the things a successful simulation cannot prove.">
+  <meta property="og:title" content="Open Energy Methods — Show the working">
+  <meta property="og:description" content="Engineering models, experiments and research methods shared in the open. A workbench, not a company.">
   <meta property="og:url" content="https://open-energy-methods.github.io/">
   <meta property="og:image" content="https://raw.githubusercontent.com/Open-Energy-Methods/.github/main/assets/brand/oem-logo-full-primary.svg">
-  <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://open-energy-methods.github.io/">
-  <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/Open-Energy-Methods/.github/main/assets/brand/oem-logo-symbol-primary.svg">
+  <link rel="icon" type="image/svg+xml" href="./assets/brand/oem-symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./assets/site.css">
-  <title>Open Energy Methods — Questions worth checking</title>
+  <link rel="stylesheet" href="./assets/workbench.css">
+  <title>Open Energy Methods — Show the working</title>
+  <script defer src="./assets/workbench.js"></script>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="container nav-shell">
-    <a class="brand" href="./" aria-label="Open Energy Methods home"><img width="209" height="88" src="https://raw.githubusercontent.com/Open-Energy-Methods/.github/main/assets/brand/oem-logo-full-primary.svg" alt="Open Energy Methods"></a>
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#question">The question</a>
-      <a href="#bench">On the bench</a>
+<body class="workbench-page">
+<a class="wb-skip" href="#main">Skip to content</a>
+<header class="wb-header">
+  <div class="wb-wrap wb-nav">
+    <a href="./" class="wb-logo" aria-label="Open Energy Methods home">
+      <img src="./assets/brand/oem-logo.svg" alt="Open Energy Methods" width="208">
+    </a>
+    <nav class="wb-menu" aria-label="Main navigation">
+      <a href="#work">Projects</a>
+      <a href="#method">Approach</a>
+      <a href="#demo">Try a balance</a>
       <a href="#notes">Field notes</a>
       <a href="#about">About</a>
-      <a class="nav-gh" href="https://github.com/Open-Energy-Methods">GitHub ↗</a>
+      <a class="wb-github" href="https://github.com/Open-Energy-Methods">GitHub ↗</a>
     </nav>
-    <details class="mobile-nav">
-      <summary aria-label="Open navigation menu">Menu ☰</summary>
-      <nav class="mobile-links" aria-label="Mobile navigation">
-        <a href="#question">The question</a><a href="#bench">On the bench</a><a href="#notes">Field notes</a><a href="#about">About</a>
+    <details class="wb-mobile-menu">
+      <summary aria-label="Toggle navigation">Index ☰</summary>
+      <nav class="wb-mobile-links" aria-label="Mobile navigation">
+        <a href="#work">Projects</a>
+        <a href="#method">Approach</a>
+        <a href="#demo">Try a balance</a>
+        <a href="#notes">Field notes</a>
+        <a href="#about">About</a>
         <a href="https://github.com/Open-Energy-Methods">GitHub ↗</a>
       </nav>
     </details>
   </div>
 </header>
 <main id="main">
-  <section class="container hero workshop-hero" id="question" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <span class="eyebrow">An open engineering workbench · Started October 2026</span>
-      <h1 id="hero-title">The model ran.<br><em>But is it right?</em></h1>
-      <p class="lead">Open Energy Methods is my open-source engineering research workbench. I use it to publish projects, experiments, numerical models, methods and field notes that others can inspect and reproduce.</p>
-      <p class="lead">EnerLint is the first project. It asks whether a successful simulation also passes independently defined physical checks. Future work can explore different energy-engineering questions; it does not all need to be verification software.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="#bench">See the first experiment</a>
-        <a class="btn btn-outline" href="./notes/001-a-pass-isnt-proof.html">Read a field note ↗</a>
-      </div>
-      <p class="hero-note">Created and maintained by Abhijith Sivaprasadan · Early work shared openly, with the assumptions and limitations left visible.</p>
-    </div>
-    <aside class="scratch-paper" aria-label="An engineering question">
-      <div class="scratch-top"><span class="mono small">WORKBENCH / NOTE 001</span><span class="mono small">27 OCT 2026</span></div>
-      <p class="scratch-prompt">What does <span class="underlined">PASS</span> actually prove?</p>
-      <div class="scratch-equation" aria-label="Steady state energy balance">Σṁh<sub>in</sub> − Σṁh<sub>out</sub> + Q̇<sub>in</sub> − Ẇ<sub>out</sub> = 0</div>
-      <p class="scratch-annotation">A balance can close beautifully.<br>The operating point can still be wrong.</p>
-      <div class="scratch-rule"></div>
-      <p class="scratch-signoff">That's where the interesting work begins.</p>
-    </aside>
-  </section>
-
-  <section class="section section-white" id="bench" aria-labelledby="bench-title">
-    <div class="container">
-      <div class="section-heading">
-        <span class="eyebrow">On the bench / 01</span>
-        <h2 id="bench-title">EnerLint, including the mistake it cannot catch.</h2>
-        <p>EnerLint is my first small experiment: a Python tool that checks declared mass and energy balances from exported model results. It is independent of the solver's own convergence flag—but it still depends on the data and assumptions you give it.</p>
-      </div>
-      <div class="experiment-grid">
-        <article class="experiment">
-          <span class="exp-num">01 / CLOSED</span>
-          <h3>A simple turbine balances.</h3>
-          <p>For a hand-constructed turbine example, the mass and first-law residuals are both zero. The declared checks pass.</p>
-          <div class="experiment-result"><span class="chip chip-pass">PASS_IN_SCOPE</span><code>0 kg/s · 0 W</code></div>
-        </article>
-        <article class="experiment">
-          <span class="exp-num">02 / BROKEN</span>
-          <h3>Flip the compressor work sign.</h3>
-          <p>The selected mutation produces a −480,000 W energy residual. The checker notices this specific inconsistency.</p>
-          <div class="experiment-result"><span class="chip chip-fail">FAIL</span><code>−480,000 W</code></div>
-        </article>
-        <article class="experiment experiment-escape">
-          <span class="exp-num">03 / THE INTERESTING ONE</span>
-          <h3>Change the flows and work together.</h3>
-          <p>Scale both compressor mass flows and its shaft work by 10%. The model's operating point changes, yet both balance equations still close. EnerLint <em>passes it</em>.</p>
-          <div class="experiment-result"><span class="chip chip-warning">MISSED BY DESIGN</span><code>PASS_IN_SCOPE</code></div>
-        </article>
-      </div>
-      <p class="method-footnote">These are hand-constructed developer tests, not measurements or independent validation. The six selected fault mutations currently fail as expected; one compensating error intentionally escapes. <a href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/RESULTS.md">Read the recorded results ↗</a></p>
-      <div class="project-entry">
-        <div>
-          <span class="eyebrow">The actual project</span>
-          <h3>EnerLint <span class="tiny-tag">experimental alpha · v0.1.0a0</span></h3>
-          <p>Steady control volumes, one-interval thermal storage, strict SI input contracts, traceable residuals and explicit failure conditions. All source code, examples and limitations are open.</p>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="https://github.com/Open-Energy-Methods/enerlint">Explore EnerLint ↗</a>
-            <a class="btn btn-outline" href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/VERIFICATION_CONTRACT.md">See the equations ↗</a>
-          </div>
-        </div>
-        <div class="terminal">
-          <div class="terminal-top mono">Try the turbine example · Python 3.10+</div>
-          <pre><code><span class="prompt">$</span> git clone https://github.com/Open-Energy-Methods/enerlint.git
-<span class="prompt">$</span> cd enerlint
-<span class="prompt">$</span> python -m pip install -e ".[dev]"
-<span class="prompt">$</span> enerlint check examples/steady_turbine.json</code></pre>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section container" id="notes" aria-labelledby="notes-title">
-    <div class="section-heading">
-      <span class="eyebrow">Field notes · Not press releases</span>
-      <h2 id="notes-title">Show the working, not just the conclusion.</h2>
-      <p>These notes are where I can explain what I tried, which assumptions mattered, and what remains unresolved. The useful parts are not always the ones that passed.</p>
-    </div>
-    <div class="note-list">
-      <a class="note-row" href="./notes/001-a-pass-isnt-proof.html">
-        <span class="mono small">001 · OCT 2026</span>
-        <span><strong>Why a passing energy balance is not proof</strong><small>The deliberately wrong compressor that EnerLint cannot reject</small></span>
-        <span aria-hidden="true">↗</span>
-      </a>
-      <a class="note-row" href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/BENCHMARK_PROTOCOL.md">
-        <span class="mono small">REFERENCE / PROTOCOL</span>
-        <span><strong>How the first fault tests are constructed</strong><small>Known-good examples, deliberate mutations, and an honest denominator</small></span>
-        <span aria-hidden="true">↗</span>
-      </a>
-      <a class="note-row" href="https://github.com/Open-Energy-Methods/enerlint/issues/18">
-        <span class="mono small">OPEN QUESTION</span>
-        <span><strong>Does an independent check add value beyond native diagnostics?</strong><small>A comparison still to be run, not a result already claimed</small></span>
-        <span aria-hidden="true">↗</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="section section-white" id="about" aria-labelledby="about-title">
-    <div class="container about-grid">
+  <section class="wb-hero" aria-labelledby="wb-hero-title">
+    <div class="wb-wrap wb-hero-inner">
       <div>
-        <span class="eyebrow">A note from the person making this</span>
-        <h2 id="about-title">I like the part of engineering where you have to ask why.</h2>
-        <p class="lead">I'm Abhijith, an energy engineer interested in thermodynamics, computational models, and what makes a numerical result defensible.</p>
-        <p>Working on energy-system and thermodynamic modelling projects led me to keep returning to a basic question: what have we actually checked when a model reports success?</p>
-        <p>I don't have a grand answer. I have a first tool, a set of small tests, and a list of uncomfortable edge cases. I'd rather show those than pretend the work is further along than it is.</p>
-        <p>Open Energy Methods is where I collect my engineering projects, experiments, numerical models and reusable research methods. I will add work when its source, evidence and limitations are ready to share. EnerLint is the starting point, not the definition of the whole workbench.</p>
-        <p><a href="https://orcid.org/0000-0003-0299-5745">My ORCID ↗</a> · <a href="https://github.com/abhijith-sivaprasadan">Personal GitHub ↗</a></p>
+        <span class="wb-kicker">Independent engineering research · Open source</span>
+        <h1 id="wb-hero-title">Show the <span class="wb-emphasis">working.</span></h1>
+        <p class="wb-lede">A place for energy models, numerical experiments, small tools and the questions that survive the first successful run.</p>
+        <p class="wb-explain">I'm Abhijith Sivaprasadan. Open Energy Methods is my public engineering workbench: where I build things, test assumptions, document failures and share methods that others can inspect, reproduce and improve.</p>
+        <div class="wb-actions">
+          <a class="wb-btn wb-btn-primary" href="#work">Explore the work <span aria-hidden="true">↗</span></a>
+          <a class="wb-btn" href="#notes">Read the field notes</a>
+        </div>
+        <p class="wb-hero-foot">Created and maintained by one engineer · October 2026 onward</p>
       </div>
-      <aside class="roots-panel">
-        <span class="eyebrow">Other work that shaped my questions</span>
-        <p class="small muted">Personal projects, not OEM-owned products or evidence that EnerLint has been validated against them.</p>
-        <a href="https://github.com/abhijith-sivaprasadan/thermotwin"><strong>ThermoTwin</strong><small>Thermodynamic cycle and computational modelling experiments</small></a>
-        <a href="https://github.com/abhijith-sivaprasadan/opensteamopt"><strong>OpenSteamOpt</strong><small>Steam and power system modelling</small></a>
-        <a href="https://github.com/abhijith-sivaprasadan/kerala2040"><strong>Kerala2040</strong><small>Energy-system questions grounded in public data and explicit assumptions</small></a>
+      <aside class="wb-notebook" aria-label="Engineering notebook sketch: an example of a control volume balance">
+        <div class="wb-notebook-meta">
+          <span>FIELD NOTE / 001</span>
+          <span>OPEN QUESTION</span>
+        </div>
+        <h2>The equation can close. What did we actually check?</h2>
+        <svg class="wb-sketch" viewBox="0 0 480 240" role="img" aria-label="Declared control volume with inlet mass and enthalpy, outlet mass and enthalpy, heat input and work output">
+          <defs><marker id="wb-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#3B787E"/></marker></defs>
+          <rect x="136" y="48" width="210" height="144" rx="1" fill="none" stroke="#0C2B47" stroke-width="2.5" stroke-dasharray="9 7"/>
+          <text x="241" y="108" text-anchor="middle" font-family="IBM Plex Mono,monospace" fill="#0C2B47" font-size="15">CONTROL</text>
+          <text x="241" y="132" text-anchor="middle" font-family="IBM Plex Mono,monospace" fill="#0C2B47" font-size="15">VOLUME</text>
+          <line x1="12" y1="117" x2="129" y2="117" stroke="#3B787E" stroke-width="4" marker-end="url(#wb-arrow)"/>
+          <line x1="351" y1="117" x2="460" y2="117" stroke="#3B787E" stroke-width="4" marker-end="url(#wb-arrow)"/>
+          <text x="45" y="87" fill="#0C2B47" font-size="15" font-family="IBM Plex Mono,monospace">ṁ, h_in</text>
+          <text x="367" y="87" fill="#0C2B47" font-size="15" font-family="IBM Plex Mono,monospace">ṁ, h_out</text>
+          <line x1="243" y1="8" x2="243" y2="40" stroke="#3B787E" stroke-width="3" marker-end="url(#wb-arrow)"/>
+          <text x="261" y="29" fill="#0C2B47" font-size="14" font-family="IBM Plex Mono,monospace">Q̇_in</text>
+          <line x1="243" y1="195" x2="243" y2="231" stroke="#3B787E" stroke-width="3" marker-end="url(#wb-arrow)"/>
+          <text x="266" y="220" fill="#0C2B47" font-size="14" font-family="IBM Plex Mono,monospace">Ẇ_out</text>
+          <path d="M342 37 l14 -8 m-4 16 l12 -15" fill="none" stroke="#B04A26" stroke-width="2"/>
+        </svg>
+        <div class="wb-equation">Σ(ṁh)<sub>in</sub> − Σ(ṁh)<sub>out</sub> + Q̇<sub>in</sub> − Ẇ<sub>out</sub> = r<sub>E</sub></div>
+        <p class="wb-note-pencil">A zero residual is useful evidence. It is not the whole answer.</p>
+        <a href="./notes/001-a-pass-isnt-proof.html">Read the worked example <span aria-hidden="true">↗</span></a>
       </aside>
     </div>
   </section>
 
-  <section class="section container" id="contribute" aria-labelledby="contribute-title">
-    <div class="contribute-grid">
-      <div>
-        <span class="eyebrow">Pull up a chair</span>
-        <h2 id="contribute-title">I could use a critical second pair of eyes.</h2>
-        <p class="lead">If you work with energy models, try a case, challenge a sign convention, point out a blind spot, or tell me an existing tool does this better. That's more useful right now than applause.</p>
-        <div class="btn-row"><a class="btn btn-primary" href="https://github.com/Open-Energy-Methods/enerlint/issues">Discuss a technical issue ↗</a><a class="btn btn-outline" href="https://github.com/Open-Energy-Methods/.github/blob/main/CONTRIBUTING.md">Contributing notes ↗</a></div>
+  <section class="wb-section" id="work" aria-labelledby="work-title">
+    <div class="wb-wrap">
+      <div class="wb-section-heading">
+        <div>
+          <span class="wb-kicker">01 / On the workbench</span>
+          <h2 class="wb-section-title" id="work-title">Projects before promises.</h2>
+          <p class="wb-section-intro">Actual code and documented questions come first. EnerLint is the first project developed under OEM; other public projects listed below remain separate personal research work.</p>
+        </div>
       </div>
-      <aside class="card review-panel">
-        <span class="label">What deserves scrutiny next</span>
-        <ul class="clean-list">
-          <li><span class="list-mark">→</span><span>Which boundaries and sign conventions are easy to misunderstand?</span></li>
-          <li><span class="list-mark">→</span><span>Which useful errors do native solvers already catch?</span></li>
-          <li><span class="list-mark">→</span><span>What other false alarms or compensated errors are possible?</span></li>
-        </ul>
-        <p class="small muted" style="margin:0">There are no claims of external review, industrial validation, or certification here.</p>
+      <article class="wb-feature" aria-labelledby="enerlint-title">
+        <div class="wb-feature-copy">
+          <span class="wb-kicker">First OEM project / Experimental alpha / v0.1.0a0</span>
+          <h3 id="enerlint-title">EnerLint</h3>
+          <p class="wb-feature-description">Can a small, independent check tell us whether exported model values obey their declared mass and energy balances?</p>
+          <p class="wb-feature-note">A Python package for scope-limited physical consistency checks. Initial evidence is synthetic and hand-constructed—not independent validation or certification. It even keeps one deliberately undetected error visible.</p>
+          <div class="wb-actions">
+            <a class="wb-btn" href="https://github.com/Open-Energy-Methods/enerlint">Source and installation <span aria-hidden="true">↗</span></a>
+            <a class="wb-btn" href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/RESULTS.md">Benchmark results <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="wb-feature-stats" aria-label="Developer-selected synthetic foundation tests">
+          <div class="wb-feature-stat">
+            <span class="wb-stat-num">4 / 4</span>
+            <p>Hand-constructed baseline cases pass their declared checks.</p>
+          </div>
+          <div class="wb-feature-stat">
+            <span class="wb-stat-num">6 / 6</span>
+            <p>Deliberately faulty cases fail as expected.</p>
+          </div>
+          <div class="wb-feature-stat">
+            <span class="wb-stat-num">1 escape</span>
+            <p>A compensated operating-point error still passes. No detection-rate claim.</p>
+          </div>
+        </div>
+      </article>
+      <p class="wb-card-caption">Developer-generated examples only. Not real-world sensitivity, reliability or industrial validation. <a class="wb-link" href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/SCIENTIFIC_SCOPE.md">Read limitations ↗</a></p>
+
+      <div class="wb-subhead">
+        <h3>Related work elsewhere</h3>
+        <span class="wb-id">PERSONAL REPOSITORIES · NOT AUTOMATICALLY OEM MODULES</span>
+      </div>
+      <div class="wb-project-list">
+        <article class="wb-project">
+          <span class="wb-kicker">Thermodynamics / Personal repository</span>
+          <h4>ThermoTwin</h4>
+          <p>Thermodynamic cycle and computational-modelling experiments. Linked for context, not as a validation reference for EnerLint.</p>
+          <a href="https://github.com/abhijith-sivaprasadan/thermotwin">Open repository <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="wb-project">
+          <span class="wb-kicker">Energy systems / Personal repository</span>
+          <h4>OpenSteamOpt</h4>
+          <p>Steam and power-system modelling work, maintained separately from the OEM organization.</p>
+          <a href="https://github.com/abhijith-sivaprasadan/opensteamopt">Open repository <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="wb-project">
+          <span class="wb-kicker">Power systems / Personal repository</span>
+          <h4>Kerala2040</h4>
+          <p>A case study of energy-system questions, public evidence and explicit modelling assumptions.</p>
+          <a href="https://github.com/abhijith-sivaprasadan/kerala2040">Open repository <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+      <p class="wb-external-note">These links show related interests and earlier work. They do not imply a transfer of source code, data rights or maintainership to OEM.</p>
+    </div>
+  </section>
+
+  <section class="wb-section wb-process" id="method" aria-labelledby="method-title">
+    <div class="wb-wrap">
+      <span class="wb-kicker">02 / How I work</span>
+      <h2 class="wb-section-title" id="method-title">Keep the method inspectable.</h2>
+      <p class="wb-section-intro">The workbench is a place to publish both answers and the route taken to reach them. Not every experiment will become software, and not every result will be positive.</p>
+      <div class="wb-process-grid">
+        <div class="wb-process-item"><span class="wb-process-num">01 — ASK</span><h3>Start with a real question.</h3><p>State the physical problem, the quantities involved and what would count as a useful answer.</p></div>
+        <div class="wb-process-item"><span class="wb-process-num">02 — TEST</span><h3>Show the calculation.</h3><p>Keep inputs, units, methods and tests visible. Use analytical references or independent evidence when the question requires them.</p></div>
+        <div class="wb-process-item"><span class="wb-process-num">03 — SHARE</span><h3>Publish the edges.</h3><p>Document what passed, what failed, what was not checked and what someone else would need to reproduce the work.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wb-section" id="demo" aria-labelledby="demo-title">
+    <div class="wb-wrap">
+      <span class="wb-kicker">03 / A small calculation</span>
+      <h2 class="wb-section-title" id="demo-title">Try a balance.</h2>
+      <p class="wb-section-intro">A browser-only illustration of the energy residual for one steady control volume. Change a value and watch the balance change. This is an educational sketch—not the EnerLint package or a validated simulation.</p>
+
+      <form id="wb-demo-form" class="wb-lab" novalidate>
+        <div class="wb-lab-meta">
+          <span>STEADY TURBINE / ONE INLET · ONE OUTLET / SI UNITS</span>
+          <span>DECLARED THRESHOLD: 1 W</span>
+        </div>
+        <div class="wb-lab-fields">
+          <div class="wb-field"><label for="wb-flow">Mass flow, ṁ</label><div class="wb-input-wrap"><input id="wb-flow" name="flow" type="number" step="any" value="2" required aria-describedby="wb-demo-scope"><span class="wb-unit">kg/s</span></div></div>
+          <div class="wb-field"><label for="wb-hin">Specific enthalpy in</label><div class="wb-input-wrap"><input id="wb-hin" name="hin" type="number" step="any" value="700000" required><span class="wb-unit">J/kg</span></div></div>
+          <div class="wb-field"><label for="wb-hout">Specific enthalpy out</label><div class="wb-input-wrap"><input id="wb-hout" name="hout" type="number" step="any" value="500000" required><span class="wb-unit">J/kg</span></div></div>
+          <div class="wb-field"><label for="wb-work">Shaft work out, Ẇ</label><div class="wb-input-wrap"><input id="wb-work" name="work" type="number" step="any" value="400000" required><span class="wb-unit">W</span></div></div>
+          <div class="wb-field"><label for="wb-heat">Heat into volume, Q̇</label><div class="wb-input-wrap"><input id="wb-heat" name="heat" type="number" step="any" value="0" required><span class="wb-unit">W</span></div></div>
+        </div>
+        <div class="wb-formula">r<sub>E</sub> = ṁ(h<sub>in</sub> − h<sub>out</sub>) + Q̇<sub>in</sub> − Ẇ<sub>out</sub></div>
+        <div class="wb-output" aria-live="polite" aria-atomic="true">
+          <span id="wb-demo-status" class="wb-status" data-kind="pass">● PASS · DEMO ONLY</span>
+          <output id="wb-demo-result" class="wb-reading" for="wb-flow wb-hin wb-hout wb-work wb-heat">r = 0 W</output>
+        </div>
+        <p id="wb-demo-message" class="wb-explanation">The energy residual is within the 1 W demonstration threshold.</p>
+        <div class="wb-actions">
+          <button class="wb-btn wb-btn-primary" type="button" id="wb-demo-break">Add 10 kW of unbalanced work</button>
+          <button class="wb-btn" type="reset">Reset example</button>
+        </div>
+        <div class="wb-lab-limits">
+          <strong>NOT CHECKED — AND STATED</strong>
+          <p id="wb-demo-scope">Equations of state, phase validity, whether the chosen boundary is correct, measurement truth, kinetic or potential energy and independent verification of the supplied operating point.</p>
+        </div>
+      </form>
+      <p class="wb-demo-caption">Runs entirely in your browser, with no inputs sent to a server. Equal inlet/outlet mass flow is assumed; only the energy residual is calculated. A passing result is not proof of the model. <a class="wb-link" href="./notes/001-a-pass-isnt-proof.html">Why a balance can pass for the wrong reason ↗</a></p>
+    </div>
+  </section>
+
+  <section class="wb-section wb-notes" id="notes" aria-labelledby="notes-title">
+    <div class="wb-wrap">
+      <span class="wb-kicker">04 / Field notebook</span>
+      <h2 class="wb-section-title" id="notes-title">Notes from the working.</h2>
+      <p class="wb-section-intro" style="margin-bottom:32px">Not press releases. Specific examples, tests, limitations and open questions, each linked to the material behind it.</p>
+      <a class="wb-note-row" href="./notes/001-a-pass-isnt-proof.html">
+        <span class="wb-id">NOTE 001 · OCT 2026</span>
+        <span><h3>Why a passing energy balance is not proof</h3><p>Two compressor operating points, the same zero residual, and the evidence that is missing.</p></span>
+        <span class="wb-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="wb-note-row" href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/BENCHMARK_PROTOCOL.md">
+        <span class="wb-id">METHOD / REFERENCE</span>
+        <span><h3>How the first fault tests are defined</h3><p>Hand-constructed baselines, deliberate mutations and the case conservation cannot catch.</p></span>
+        <span class="wb-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="wb-note-row" href="https://github.com/Open-Energy-Methods/enerlint/issues/18">
+        <span class="wb-id">OPEN QUESTION / ISSUE</span>
+        <span><h3>Do these checks add value beyond native diagnostics?</h3><p>A comparison still to be performed—not a finding already established.</p></span>
+        <span class="wb-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="wb-section" id="about" aria-labelledby="about-title">
+    <div class="wb-wrap wb-author-grid">
+      <div>
+        <span class="wb-kicker">05 / The person behind the work</span>
+        <h2 id="about-title">One workbench.<br>Many questions.</h2>
+        <p class="wb-lede">I'm Abhijith Sivaprasadan, an engineer working across sustainable energy engineering, thermodynamics and computational modelling.</p>
+        <p>Open Energy Methods gives my projects a public place of their own. It is where I can publish code and numerical models, explain how experiments were set up, acknowledge uncertainty and keep the inconvenient results in the record.</p>
+        <div class="wb-author-quote">“A finished run is the beginning of a technical question, not always the end of one.”</div>
+        <p>OEM is not a registered company, a university research group or a certification body. There is no requirement for it to become any of those. For now the objective is simply to make worthwhile engineering work open, understandable and reproducible.</p>
+        <p><strong>Abhijith Sivaprasadan · Creator &amp; Maintainer</strong></p>
+        <div class="wb-actions">
+          <a class="wb-btn" href="https://github.com/abhijith-sivaprasadan">Personal GitHub <span aria-hidden="true">↗</span></a>
+          <a class="wb-btn" href="https://orcid.org/0000-0003-0299-5745">ORCID <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <aside class="wb-author-aside" aria-label="Workbench metadata">
+        <span class="wb-kicker">Workbench record</span>
+        <div class="wb-info-row"><strong>Created</strong><span>October 2026</span></div>
+        <div class="wb-info-row"><strong>Maintainer</strong><span>Abhijith Sivaprasadan</span></div>
+        <div class="wb-info-row"><strong>Subjects</strong><span>Energy engineering · simulation · numerical methods</span></div>
+        <div class="wb-info-row"><strong>Outputs</strong><span>Projects · experiments · methods · notes</span></div>
+        <div class="wb-info-row"><strong>Work status</strong><span>Independent, public and evolving</span></div>
+        <div class="wb-info-row"><strong>Organization</strong><span><a class="wb-link" href="https://github.com/Open-Energy-Methods">GitHub repositories ↗</a></span></div>
       </aside>
     </div>
   </section>
 </main>
-<footer class="site-footer">
-  <div class="container footer-grid">
+<footer class="wb-footer">
+  <div class="wb-wrap wb-footer-main">
     <div>
-      <a href="./" aria-label="Open Energy Methods homepage"><img class="footer-brand" src="https://raw.githubusercontent.com/Open-Energy-Methods/.github/main/assets/brand/oem-logo-full-primary.svg" alt="Open Energy Methods"></a>
-      <p>An independent engineering research workbench created and maintained by Abhijith Sivaprasadan. Not a registered company, an accredited verification body or a KTH initiative.</p>
+      <img src="./assets/brand/oem-logo-reversed.svg" class="wb-footer-logo" width="195" alt="Open Energy Methods">
+      <p>Independent, open-source engineering research workbench. Created and maintained by Abhijith Sivaprasadan; not a certification body or institutional program.</p>
     </div>
-    <div class="footer-column"><b>Explore</b><a href="#bench">EnerLint experiment</a><a href="./notes/001-a-pass-isnt-proof.html">Field note 001</a><a href="https://github.com/Open-Energy-Methods/enerlint/tree/main/docs">Technical documentation ↗</a></div>
-    <div class="footer-column"><b>Elsewhere</b><a href="https://github.com/Open-Energy-Methods">GitHub ↗</a><a href="https://www.linkedin.com/company/open-energy-methods">LinkedIn ↗</a><a href="https://github.com/Open-Energy-Methods/open-energy-methods.github.io/issues">Website feedback ↗</a></div>
+    <div>
+      <h3>Explore</h3>
+      <a href="#work">Projects</a>
+      <a href="#demo">Try a balance</a>
+      <a href="#notes">Field notes</a>
+      <a href="./notes/001-a-pass-isnt-proof.html">Note 001</a>
+    </div>
+    <div>
+      <h3>Source &amp; contact</h3>
+      <a href="https://github.com/Open-Energy-Methods">OEM on GitHub ↗</a>
+      <a href="https://github.com/Open-Energy-Methods/enerlint">EnerLint ↗</a>
+      <a href="https://github.com/Open-Energy-Methods/open-energy-methods.github.io/issues">Website feedback ↗</a>
+      <a href="https://www.linkedin.com/company/open-energy-methods">LinkedIn ↗</a>
+    </div>
   </div>
-  <div class="container footer-bottom"><span>Open Energy Methods · 2026</span><span>Questions worth checking.</span></div>
+  <div class="wb-wrap wb-footer-bottom">
+    <span>© 2026 Open Energy Methods · Creator &amp; Maintainer: Abhijith Sivaprasadan</span>
+    <span>Show the working. State the limits.</span>
+  </div>
 </footer>
 </body>
 </html>
