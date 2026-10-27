@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://open-energy-methods.github.io/sitemap.xml
