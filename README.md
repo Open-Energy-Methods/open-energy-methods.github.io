@@ -1,6 +1,6 @@
 # Open Energy Methods — website
 
-Founder-led GitHub Pages workbench for **Open Energy Methods**: the experiments, technical field notes, real limitations, and person behind the project.
+GitHub Pages home for **Open Energy Methods**, an independent open-source engineering research workbench created and maintained by Abhijith Sivaprasadan. It publishes projects, experiments, numerical models, reusable methods and technical field notes.
 
 This is deliberately **not** written like a startup brochure. See the [editorial voice guide](https://github.com/Open-Energy-Methods/.github/blob/main/docs/EDITORIAL_VOICE.md) before adding or rewriting public copy.
 
@@ -10,7 +10,7 @@ This is deliberately **not** written like a startup brochure. See the [editorial
 ## Architecture
 Static HTML/CSS, no JavaScript build step, no telemetry or cookies. GitHub Pages deploys from the repository root of the `main` branch when Pages is configured to use `Deploy from a branch`. The `.nojekyll` marker disables Jekyll processing.
 
-- `index.html` — founder-led engineering workbench and experiment overview.
+- `index.html` — creator-maintained engineering workbench and experiment overview.
 - `notes/001-a-pass-isnt-proof.html` — worked technical field note explaining a compensating error missed by conservation-only checks.
 - `assets/site.css` — responsive styles based on the supplied OEM design tokens (navy #0C2B47, teal #3B787E, IBM Plex / Outfit).
 - Brand mark is served from the canonical SVG maintained in `Open-Energy-Methods/.github/assets/brand`.
@@ -26,7 +26,7 @@ python -m http.server 8000
 ```
 
 ## Updating content
-Write from concrete questions, experiments and evidence rather than mission-statement templates. Use the founder's actual voice (first person when appropriate), but never invent biographical anecdotes. Preserve scientific claim boundaries: EnerLint is an experimental alpha, not an accredited certification service or industrially validated technology. Label planned capabilities as planned. Keep all project links grounded in the public repositories. Do not publish the founder's confidential research bible, business assumptions, or personal circumstances here.
+Write from concrete questions, experiments and evidence rather than mission-statement templates. Use the creator's own voice (first person when appropriate), but never invent biographical anecdotes. Preserve scientific claim boundaries: EnerLint is an experimental alpha, not an accredited certification service or industrially validated technology. Label planned capabilities as planned. Keep all project links grounded in the public repositories. Do not publish the founder's confidential research bible, business assumptions, or personal circumstances here.
 
 ## Publishing
 In GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: main / (root)**, then save. The site URL is the organization's GitHub Pages domain.
