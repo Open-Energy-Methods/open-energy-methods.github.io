@@ -12,13 +12,16 @@ Read the [OEM editorial and evidence policy](https://github.com/Open-Energy-Meth
 
 ## Website structure
 
-- `index.html` — workbench homepage, real project index, scientific method, in-browser demonstration, notes and creator profile.
+- `index.html` — workbench homepage with source-linked research summaries, method, in-browser demonstration, notes and creator profile.
+- `projects/index.html` — substantial evidence-backed research catalogue covering EnerLint, ThermoTwin-F, OpenSteamOpt and Kerala2040, with reproducibility and limitations.
 - `notes/001-a-pass-isnt-proof.html` — documented synthetic negative control and science boundaries.
 - `assets/site.css` — legacy component styles used by the notes page.
 - `assets/workbench.css` — warm-paper design extension drawn from the approved OEM design-language references.
 - `assets/workbench.js` — small accessible **browser-only demo** of one declared steady first-law energy residual, not the EnerLint library.
 - `assets/brand/` — checked-in copies of approved vector artwork, maintained canonically in [the OEM brand library](https://github.com/Open-Energy-Methods/.github/tree/main/assets/brand).
 - `docs/UI_UX_BACKLOG.md` — prioritized issues; the [website issue tracker](https://github.com/Open-Energy-Methods/open-energy-methods.github.io/issues) is authoritative.
+- `docs/CURRENT_WORK_SOURCES.md` — dated public source register and scope rules for every displayed quantitative claim.
+- `scripts/check_site.py` — dependency-free HTML/local-link/anchor validation; automated in `.github/workflows/site-integrity.yml`.
 
 The browser example deliberately tests **one** first-law residual with equal inlet/outlet mass flow, within an illustrative 1 W threshold. It does not check measurements, phase models, correct system boundaries, solver convergence, mass closure independently, or model validation. No inputs are transmitted. For the genuine package, see [EnerLint](https://github.com/Open-Energy-Methods/enerlint).
 
@@ -38,11 +41,11 @@ python -m http.server 8000
 # visit http://localhost:8000/
 ```
 
-Test both the homepage and field note at 360, 390, 768 and desktop widths. Test keyboard navigation, open/closed mobile menus, changed numeric values, invalid values, reset and the unbalanced-work negative control.
+Run `python scripts/check_site.py` to check local references and headings. Test the homepage, research catalogue and field note at 360, 390, 768 and desktop widths. Test keyboard navigation, open/closed mobile menus, changed numeric values, invalid values, reset and the unbalanced-work negative control.
 
 ## GitHub Pages publishing
 
-GitHub Pages deploys from `main` / root, with `.nojekyll` committed. `robots.txt` and `sitemap.xml` describe public pages. Work must be merged into `main` before the automated Pages deployment.
+GitHub Pages deploys from `main` / root, with `.nojekyll` committed. The separate integrity CI workflow checks local paths/anchors, but does not validate external scientific claims or perform browser screenshots. `robots.txt` and `sitemap.xml` describe public pages. Work must be merged into `main` before the automated Pages deployment.
 
 ## Brand and rights
 
