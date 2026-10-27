@@ -29,7 +29,7 @@
       <img src="./assets/brand/oem-logo.svg" alt="Open Energy Methods" width="208">
     </a>
     <nav class="wb-menu" aria-label="Main navigation">
-      <a href="#work">Projects</a>
+      <a href="./projects/">Research catalogue</a>
       <a href="#method">Approach</a>
       <a href="#demo">Try a balance</a>
       <a href="#notes">Field notes</a>
@@ -39,7 +39,7 @@
     <details class="wb-mobile-menu">
       <summary aria-label="Toggle navigation">Index ☰</summary>
       <nav class="wb-mobile-links" aria-label="Mobile navigation">
-        <a href="#work">Projects</a>
+        <a href="./projects/">Research catalogue</a>
         <a href="#method">Approach</a>
         <a href="#demo">Try a balance</a>
         <a href="#notes">Field notes</a>
@@ -55,10 +55,10 @@
       <div>
         <span class="wb-kicker">Independent engineering research · Open source</span>
         <h1 id="wb-hero-title">Show the <span class="wb-emphasis">working.</span></h1>
-        <p class="wb-lede">A place for energy models, numerical experiments, small tools and the questions that survive the first successful run.</p>
+        <p class="wb-lede">Independent engineering software, numerical experiments and publicly documented energy research—what works, what has been measured, and what remains uncertain.</p>
         <p class="wb-explain">I'm Abhijith Sivaprasadan. Open Energy Methods is my public engineering workbench: where I build things, test assumptions, document failures and share methods that others can inspect, reproduce and improve.</p>
         <div class="wb-actions">
-          <a class="wb-btn wb-btn-primary" href="#work">Explore the work <span aria-hidden="true">↗</span></a>
+          <a class="wb-btn wb-btn-primary" href="./projects/">Explore documented projects <span aria-hidden="true">↗</span></a>
           <a class="wb-btn" href="#notes">Read the field notes</a>
         </div>
         <p class="wb-hero-foot">Created and maintained by one engineer · October 2026 onward</p>
@@ -96,16 +96,16 @@
       <div class="wb-section-heading">
         <div>
           <span class="wb-kicker">01 / On the workbench</span>
-          <h2 class="wb-section-title" id="work-title">Projects before promises.</h2>
-          <p class="wb-section-intro">Actual code and documented questions come first. EnerLint is the first project developed under OEM; other public projects listed below remain separate personal research work.</p>
+          <h2 class="wb-section-title" id="work-title">Four real research records.</h2>
+          <p class="wb-section-intro">Current software and analysis, linked to real tests, methods and source records. EnerLint is developed within OEM. The other three are separately maintained personal repositories by the same creator—not transferred OEM modules.</p>
         </div>
       </div>
       <article class="wb-feature" aria-labelledby="enerlint-title">
         <div class="wb-feature-copy">
-          <span class="wb-kicker">First OEM project / Experimental alpha / v0.1.0a0</span>
+          <span class="wb-kicker">OEM repository / EnerLint v0.1.0a0 / Unreleased alpha</span>
           <h3 id="enerlint-title">EnerLint</h3>
           <p class="wb-feature-description">Can a small, independent check tell us whether exported model values obey their declared mass and energy balances?</p>
-          <p class="wb-feature-note">A Python package for scope-limited physical consistency checks. Initial evidence is synthetic and hand-constructed—not independent validation or certification. It even keeps one deliberately undetected error visible.</p>
+          <p class="wb-feature-note">Implemented now: steady control-volume mass/first-law checks, one-interval thermal storage accounting, strict SI JSON inputs, reports and fault-injection tests. The initial benchmark is synthetic; a deliberately compensated compressor error still escapes. No independent external review, public package release or DOI yet.</p>
           <div class="wb-actions">
             <a class="wb-btn" href="https://github.com/Open-Energy-Methods/enerlint">Source and installation <span aria-hidden="true">↗</span></a>
             <a class="wb-btn" href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/RESULTS.md">Benchmark results <span aria-hidden="true">↗</span></a>
@@ -126,33 +126,40 @@
           </div>
         </div>
       </article>
-      <p class="wb-card-caption">Developer-generated examples only. Not real-world sensitivity, reliability or industrial validation. <a class="wb-link" href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/SCIENTIFIC_SCOPE.md">Read limitations ↗</a></p>
+      <p class="wb-card-caption">Evidence: <a class="wb-link" href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/RESULTS.md">27 Oct benchmark record</a> and <a class="wb-link" href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/BENCHMARK_PROTOCOL.md">fault protocol</a>. Developer-selected synthetic examples, not external scientific validation or operational fault-detection accuracy.</p>
 
       <div class="wb-subhead">
-        <h3>Related work elsewhere</h3>
-        <span class="wb-id">PERSONAL REPOSITORIES · NOT AUTOMATICALLY OEM MODULES</span>
+        <h3>Other active personal research</h3>
+        <span class="wb-id">EVIDENCE CHECKED · 27 OCT 2026 · SEPARATE REPOSITORIES</span>
       </div>
       <div class="wb-project-list">
         <article class="wb-project">
-          <span class="wb-kicker">Thermodynamics / Personal repository</span>
-          <h4>ThermoTwin</h4>
-          <p>Thermodynamic cycle and computational-modelling experiments. Linked for context, not as a validation reference for EnerLint.</p>
-          <a href="https://github.com/abhijith-sivaprasadan/thermotwin">Open repository <span aria-hidden="true">↗</span></a>
+          <span class="wb-kicker">Gas turbines · Fortran 2008 · Source-only beta</span>
+          <h4>ThermoTwin-F</h4>
+          <p>Brayton/combined-cycle simulation, degradation, transient and diagnostics work. A tagged source beta is archived with a Zenodo DOI; it is not validated on commercial plant measurements.</p>
+          <span class="wb-project-evidence">v2.0.0-beta.1 · 10/10 release CI jobs · DOI 10.5281/zenodo.23679426</span>
+          <div class="wb-project-links"><a href="./projects/#thermotwin">Evidence and limits ↗</a><a href="https://github.com/abhijith-sivaprasadan/thermotwin/releases/tag/v2.0.0-beta.1">Source release ↗</a></div>
         </article>
         <article class="wb-project">
-          <span class="wb-kicker">Energy systems / Personal repository</span>
+          <span class="wb-kicker">Industrial steam · Python / Modelica · Synthetic</span>
           <h4>OpenSteamOpt</h4>
-          <p>Steam and power-system modelling work, maintained separately from the OEM organization.</p>
-          <a href="https://github.com/abhijith-sivaprasadan/opensteamopt">Open repository <span aria-hidden="true">↗</span></a>
+          <p>A two-boiler steam-and-power demonstrator with Pyomo/HiGHS scheduling, shadow dynamics and FMU integration. Reported cost differences use an author-built baseline, not a real plant.</p>
+          <span class="wb-project-evidence">3 reproducible scenarios · 3.34–8.95% lower modelled costs vs its own comparator</span>
+          <div class="wb-project-links"><a href="./projects/#opensteamopt">Evidence and limits ↗</a><a href="https://github.com/abhijith-sivaprasadan/opensteamopt">Source ↗</a></div>
         </article>
         <article class="wb-project">
-          <span class="wb-kicker">Power systems / Personal repository</span>
+          <span class="wb-kicker">Kerala electricity · Observations / ERA5 · 2026 evidence freeze</span>
           <h4>Kerala2040</h4>
-          <p>A case study of energy-system questions, public evidence and explicit modelling assumptions.</p>
-          <a href="https://github.com/abhijith-sivaprasadan/kerala2040">Open repository <span aria-hidden="true">↗</span></a>
+          <p>Official-statistics reconciliation, daily SLDC data auditing and retrospective weather–demand analysis. Operational hourly network results are not established by the available sources.</p>
+          <span class="wb-project-evidence">354/365 reported SLDC days · 353 observed daily targets matched to ERA5</span>
+          <div class="wb-project-links"><a href="./projects/#kerala2040">Evidence and limits ↗</a><a href="https://kerala2040.github.io/">Research site ↗</a></div>
         </article>
       </div>
-      <p class="wb-external-note">These links show related interests and earlier work. They do not imply a transfer of source code, data rights or maintainership to OEM.</p>
+      <div class="wb-work-cta">
+        <p><strong>Want the numbers, not the summary?</strong> The research catalogue contains dated evidence, reproduction steps, negative results, missing validation and direct source links for all four projects.</p>
+        <a class="wb-btn wb-btn-primary" href="./projects/">Open research catalogue <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="wb-external-note">All three projects have substantial code and documented evidence. They remain separate personal repositories. Figures shown are bounded by their own study designs, reference inputs and release status; linking them here does not transfer code ownership or validate EnerLint.</p>
     </div>
   </section>
 
@@ -235,7 +242,7 @@
         <span class="wb-kicker">05 / The person behind the work</span>
         <h2 id="about-title">One workbench.<br>Many questions.</h2>
         <p class="wb-lede">I'm Abhijith Sivaprasadan, an engineer working across sustainable energy engineering, thermodynamics and computational modelling.</p>
-        <p>Open Energy Methods gives my projects a public place of their own. It is where I can publish code and numerical models, explain how experiments were set up, acknowledge uncertainty and keep the inconvenient results in the record.</p>
+        <p>Open Energy Methods connects public work that already exists: EnerLint’s conservation checks, a citable ThermoTwin-F source beta, OpenSteamOpt’s synthetic plant scheduling studies and Kerala2040’s source-audited electricity research. This site points to the original repositories so the evidence can be checked rather than merely described.</p>
         <div class="wb-author-quote">A finished run is a starting point for scrutiny, not necessarily the end of the work.</div>
         <p>OEM is not a registered company, a university research group or a certification body. There is no requirement for it to become any of those. For now the objective is simply to make worthwhile engineering work open, understandable and reproducible.</p>
         <p><strong>Abhijith Sivaprasadan · Creator &amp; Maintainer</strong></p>
@@ -249,7 +256,7 @@
         <div class="wb-info-row"><strong>Created</strong><span>October 2026</span></div>
         <div class="wb-info-row"><strong>Maintainer</strong><span>Abhijith Sivaprasadan</span></div>
         <div class="wb-info-row"><strong>Subjects</strong><span>Energy engineering · simulation · numerical methods</span></div>
-        <div class="wb-info-row"><strong>Outputs</strong><span>Projects · experiments · methods · notes</span></div>
+        <div class="wb-info-row"><strong>Records</strong><span>1 OEM project · 3 linked personal research projects</span></div>
         <div class="wb-info-row"><strong>Work status</strong><span>Independent, public and evolving</span></div>
         <div class="wb-info-row"><strong>Organization</strong><span><a class="wb-link" href="https://github.com/Open-Energy-Methods">GitHub repositories ↗</a></span></div>
       </aside>
@@ -264,7 +271,7 @@
     </div>
     <div>
       <h3>Explore</h3>
-      <a href="#work">Projects</a>
+      <a href="./projects/">Research catalogue</a>
       <a href="#demo">Try a balance</a>
       <a href="#notes">Field notes</a>
       <a href="./notes/001-a-pass-isnt-proof.html">Note 001</a>
