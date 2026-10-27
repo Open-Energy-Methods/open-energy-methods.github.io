@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0C2B47">
+  <meta name="description" content="Open Energy Methods develops reproducible, open-source numerical verification methods and evidence-limited tools for energy engineering research. Explore EnerLint.">
+  <meta name="author" content="Open Energy Methods">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Open Energy Methods">
+  <meta property="og:title" content="Open Energy Methods — Independent checks for computational energy research">
+  <meta property="og:description" content="Open methods, independent checks, explicit limits. Explore the experimental EnerLint toolkit.">
+  <meta property="og:url" content="https://open-energy-methods.github.io/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Open-Energy-Methods/.github/main/assets/brand/oem-logo-full-primary.svg">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://open-energy-methods.github.io/">
+  <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/Open-Energy-Methods/.github/main/assets/brand/oem-logo-symbol-primary.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./assets/site.css">
+  <title>Open Energy Methods | Independent verification for energy research</title>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="container nav-shell">
+    <a class="brand" href="/" aria-label="Open Energy Methods — home"><img width="209" height="88" src="https://raw.githubusercontent.com/Open-Energy-Methods/.github/main/assets/brand/oem-logo-full-primary.svg" alt="Open Energy Methods"></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#projects">Projects</a><a href="#method">Methodology</a><a href="#evidence">Evidence</a><a href="#contribute">Contribute</a><a href="#about">About</a>
+      <a class="nav-gh" href="https://github.com/Open-Energy-Methods" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </nav>
+    <details class="mobile-nav">
+      <summary aria-label="Open navigation menu">Menu ☰</summary>
+      <nav class="mobile-links" aria-label="Mobile navigation">
+        <a href="#projects">Projects</a><a href="#method">Methodology</a><a href="#evidence">Evidence</a><a href="#contribute">Contribute</a><a href="#about">About</a><a href="https://github.com/Open-Energy-Methods">GitHub ↗</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<main id="main">
+  <section class="container hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <span class="eyebrow">Open-source research software · Early stage</span>
+      <h1 id="hero-title">Independent checks for computational energy research.</h1>
+      <p class="lead">Open Energy Methods develops reproducible open-source tools for assessing specified physical and numerical properties of engineering-model outputs. <strong>EnerLint</strong> is our first experimental toolkit; it does not replace model validation or safety review.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="#projects">Explore EnerLint <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#method">Read our methodology</a></div>
+      <p class="hero-note">An independent, early-stage initiative—not a registered company, a certification body, or an official KTH project.</p>
+    </div>
+    <figure style="margin:0;min-width:0">
+      <div class="card evidence-card">
+        <div class="evidence-head"><span class="mono small" style="font-size:.76rem">synthetic_adiabatic_turbine</span><span class="chip chip-plain">hand_constructed</span></div>
+        <div class="evidence-body">
+          <div class="status-row"><span class="chip chip-pass" style="font-size:.78rem;padding:7px 10px"><span aria-hidden="true">●</span> PASS_IN_SCOPE</span><span class="small">2 of 2 implemented checks within threshold</span></div>
+          <div class="table-scroll">
+            <table class="table"><thead><tr><th scope="col">Check</th><th scope="col" style="text-align:right">Residual</th><th scope="col" style="text-align:right">Threshold</th><th scope="col">Result</th></tr></thead>
+            <tbody><tr><td class="code-name">steady_mass_closure</td><td class="num">0 kg/s</td><td class="num">4 × 10⁻⁸ kg/s</td><td><span class="chip chip-pass">● PASS</span></td></tr><tr><td class="code-name">steady_first_law</td><td class="num">0 W</td><td class="num">1 W</td><td><span class="chip chip-pass">● PASS</span></td></tr></tbody></table>
+          </div>
+          <div class="limitation"><span class="label">Limitation</span>A pass means only that declared checks met their thresholds. Not model, measurement, or safety validation.</div>
+        </div>
+      </div>
+      <figcaption class="caption">Illustrative output based on a <a href="https://github.com/Open-Energy-Methods/enerlint/blob/main/examples/steady_turbine.json">hand-constructed repository example</a>; no experimental measurements.</figcaption>
+    </figure>
+  </section>
+  <section class="section section-white" id="method" aria-labelledby="method-title"><div class="container">
+    <div class="section-heading"><span class="eyebrow">Scope</span><h2 id="method-title">What we do, and what we do not</h2><p>We build tools to make specific computational checks inspectable and repeatable. Good engineering still requires judgment beyond any automated report.</p></div>
+    <div class="two-up">
+      <article class="scope-panel"><h3>We do</h3><ul class="clean-list">
+        <li><span class="list-mark">+</span><span>Build transparent, reusable methods for checking stated physical and numerical properties of model outputs.</span></li>
+        <li><span class="list-mark">+</span><span>Publish benchmarks, including deliberately faulty cases and a known case the checks cannot catch.</span></li>
+        <li><span class="list-mark">+</span><span>Report the boundary, assumptions, tolerances and limitations alongside each result.</span></li>
+        <li><span class="list-mark">+</span><span>Develop in the open: accessible source, tests, documentation and issues.</span></li>
+      </ul></article>
+      <article class="scope-panel"><h3>We do not</h3><ul class="clean-list">
+        <li><span class="list-mark negative">−</span><span>Replace a solver, modelling framework or physical-property library.</span></li>
+        <li><span class="list-mark negative">−</span><span>Certify a model, sign off a design, or guarantee correct engineering conclusions.</span></li>
+        <li><span class="list-mark negative">−</span><span>Claim experimental validation, industrial qualification or safety suitability.</span></li>
+        <li><span class="list-mark negative">−</span><span>Treat a conservation pass as proof that inputs, assumptions or measurements are correct.</span></li>
+      </ul></article>
+    </div>
+  </div></section>
+  <section class="section container" id="projects" aria-labelledby="project-title">
+    <div class="section-heading"><span class="eyebrow">Projects / 01</span><h2 id="project-title">One library, in early alpha</h2><p>A deliberate starting point: thermal conservation and storage accounting with precisely declared scope, not a broad catalog of unimplemented software.</p></div>
+    <article class="card project">
+      <div class="project-summary">
+        <div class="project-title"><h3>Ener<span>Lint</span></h3><span class="chip chip-teal">Experimental alpha</span></div>
+        <span class="label">An Open Energy Methods project · v0.1.0a0 · MIT licence</span>
+        <p class="lead">Independent, scope-limited physical consistency checks for exported energy-engineering results—separate from the originating solver's convergence flag.</p>
+        <ul class="clean-list">
+          <li><span class="list-mark">+</span><span>Mass-flow and first-law energy closure for steady control volumes, with explicit heat and work signs.</span></li>
+          <li><span class="list-mark">+</span><span>Stored-energy accounting for one thermal-storage interval.</span></li>
+          <li><span class="list-mark">+</span><span>Strict JSON and SI input contracts; unknown or missing fields are not silently interpreted as zero.</span></li>
+          <li><span class="list-mark">+</span><span>Machine-readable results, input fingerprint, scoped status and documented limitations.</span></li>
+        </ul>
+        <div class="btn-row"><a class="btn btn-primary" href="https://github.com/Open-Energy-Methods/enerlint#readme">Read the documentation</a><a class="btn btn-outline" href="https://github.com/Open-Energy-Methods/enerlint">View on GitHub ↗</a></div>
+      </div>
+      <div class="project-aside">
+        <div class="terminal">
+          <div class="terminal-top mono">Install from source · Python 3.10+</div>
+          <pre><code><span class="prompt">$</span> git clone https://github.com/&#10;  Open-Energy-Methods/enerlint.git
+<span class="prompt">$</span> cd enerlint
+<span class="prompt">$</span> python -m pip install -e ".[dev]"
+<span class="prompt">$</span> enerlint check examples/steady_turbine.json</code></pre>
+        </div>
+        <div class="status-box"><span class="label">Research status</span>Initial, hand-constructed reference cases and developer-selected faults. Not independently reviewed. No public PyPI release or Zenodo DOI is claimed for EnerLint.</div>
+      </div>
+    </article>
+    <div class="agenda">
+      <div class="table-scroll"><table class="table"><thead><tr><th scope="col">Research direction</th><th scope="col">Status</th><th scope="col">What it might enable</th></tr></thead><tbody>
+      <tr><td><strong>Cross-tool verification</strong></td><td><span class="chip chip-neutral">Planned research</span></td><td>Comparison of output evidence across separately implemented models.</td></tr>
+      <tr><td><strong>Uncertainty-aware checks</strong></td><td><span class="chip chip-neutral">Planned research</span></td><td>Tolerances tied to defined uncertainty and measurement context.</td></tr>
+      <tr><td><strong>Electrical power systems</strong></td><td><span class="chip chip-neutral">Research idea</span></td><td>Scoped consistency checks for exported electrical-network data.</td></tr>
+      <tr><td><strong>Thermal finite elements</strong></td><td><span class="chip chip-neutral">Research idea</span></td><td>Boundary-flux and analytical reference comparisons for thermal fields.</td></tr>
+      </tbody></table></div>
+    </div>
+  </section>
+  <section class="section section-white" id="evidence" aria-labelledby="evidence-title"><div class="container">
+    <div class="section-heading"><span class="eyebrow">Evidence first</span><h2 id="evidence-title">A result is only as strong as its reference</h2><p>The categories below describe a research progression, <strong>not</strong> recognized accreditation levels. EnerLint currently supports scoped exported-data residual checks; it has not achieved empirical validation or engineering certification.</p></div>
+    <div class="evidence-levels">
+      <div class="level dim"><span class="label">Stage 0</span><strong>Native solver status</strong><p>Solver success does not, by itself, supply independent evidence.</p></div>
+      <div class="level current"><span class="label" style="color:var(--teal-text)">Stage 1 · Today</span><strong>External residual checks</strong><p>Defined balances on exported data and declared boundaries.</p></div>
+      <div class="level"><span class="label">Stage 2</span><strong>Independent reference</strong><p>Separately justified analytical or manufactured benchmarks.</p></div>
+      <div class="level"><span class="label">Stage 3</span><strong>Cross-tool comparison</strong><p>Harmonized results from another implementation.</p></div>
+      <div class="level"><span class="label">Stage 4</span><strong>Measured validation</strong><p>Comparison against independent measurements and uncertainty.</p></div>
+    </div>
+    <div class="doc-links">
+      <a href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/VERIFICATION_CONTRACT.md">Verification contract ↗</a>
+      <a href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/SCIENTIFIC_SCOPE.md">Scientific scope and limits ↗</a>
+      <a href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/RESULTS.md">Synthetic benchmark results ↗</a>
+      <a href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/PRIOR_ART.md">Prior art and overlap ↗</a>
+    </div>
+  </div></section>
+  <section class="section container" id="contribute" aria-labelledby="contribute-title">
+    <div class="contribute-grid">
+      <div><div class="section-heading"><span class="eyebrow">Contribute</span><h2 id="contribute-title">The most useful contribution right now is scrutiny</h2></div>
+      <p class="lead">The mathematical assumptions, unit conventions, tolerances and hand-built benchmark choices need independent critique. Reproduce a check, challenge an assumption, report a missed defect, or propose a permission-cleared reference case.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="https://github.com/Open-Energy-Methods/.github/blob/main/CONTRIBUTING.md">Contributing guide ↗</a><a class="btn btn-outline" href="https://github.com/Open-Energy-Methods/enerlint/issues">Open an issue ↗</a></div></div>
+      <aside class="card review-panel"><span class="label">Review requested</span>
+      <ul class="clean-list"><li><span class="list-mark">→</span><span>Boundary equations and mass/energy sign conventions</span></li>
+      <li><span class="list-mark">→</span><span>Input contracts, dimensional units and numerical tolerance policy</span></li>
+      <li><span class="list-mark">→</span><span>Reference-case selection, false alarms and shared-assumption blind spots</span></li></ul>
+      <p class="small muted" style="margin:0">Contributions follow the <a href="https://github.com/Open-Energy-Methods/.github/blob/main/CODE_OF_CONDUCT.md">code of conduct</a> and repository-specific licensing. Review is not certification or institutional endorsement.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+<footer class="site-footer" id="about">
+  <div class="container footer-grid">
+    <div><a href="/" aria-label="Open Energy Methods homepage"><img class="footer-brand" src="https://raw.githubusercontent.com/Open-Energy-Methods/.github/main/assets/brand/oem-logo-full-primary.svg" alt="Open Energy Methods"></a>
+      <p>An independent, founder-led open-source research-software initiative. Not currently a registered corporation or foundation, a certification authority, or an initiative endorsed by KTH or any other institution.</p>
+    </div>
+    <div class="footer-column"><b>Research</b><a href="#projects">EnerLint</a><a href="#method">Methodology</a><a href="#evidence">Evidence boundaries</a><a href="https://github.com/Open-Energy-Methods/enerlint/tree/main/docs">Documentation ↗</a></div>
+    <div class="footer-column"><b>Connect</b><a href="https://github.com/Open-Energy-Methods">GitHub organization ↗</a><a href="https://github.com/Open-Energy-Methods/enerlint/issues">Discuss on GitHub ↗</a><a href="https://www.linkedin.com/company/open-energy-methods">LinkedIn ↗</a><a href="#contribute">Contribute</a></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 Open Energy Methods initiative</span><span>Open methods. Explicit limits. Reproducible evidence.</span></div>
+</footer>
+</body>
+</html>
