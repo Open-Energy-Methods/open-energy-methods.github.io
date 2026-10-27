@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0C2B47">
+  <meta name="description" content="A worked compressor example showing why energy conservation alone cannot detect compensating modelling errors. Field note 001 from Open Energy Methods.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Why a passing energy balance is not proof | OEM Field Note 001">
+  <meta property="og:description" content="Two compressor operating points, the same perfect residual. What an independent balance can—and cannot—tell you.">
+  <meta property="og:url" content="https://open-energy-methods.github.io/notes/001-a-pass-isnt-proof.html">
+  <link rel="canonical" href="https://open-energy-methods.github.io/notes/001-a-pass-isnt-proof.html">
+  <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/Open-Energy-Methods/.github/main/assets/brand/oem-logo-symbol-primary.svg">
+  <link rel="stylesheet" href="../assets/site.css">
+  <title>Field note 001 — A pass isn't proof | Open Energy Methods</title>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container nav-shell">
+    <a class="brand" href="../" aria-label="Open Energy Methods home"><img width="209" height="88" src="https://raw.githubusercontent.com/Open-Energy-Methods/.github/main/assets/brand/oem-logo-full-primary.svg" alt="Open Energy Methods"></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="../#bench">EnerLint</a><a href="../#notes">Field notes</a><a href="../#about">About</a>
+      <a class="nav-gh" href="https://github.com/Open-Energy-Methods/enerlint">Source ↗</a>
+    </nav>
+    <details class="mobile-nav"><summary aria-label="Open navigation menu">Menu ☰</summary><nav class="mobile-links"><a href="../">Home</a><a href="../#bench">EnerLint</a><a href="../#notes">Field notes</a><a href="https://github.com/Open-Energy-Methods/enerlint">Source ↗</a></nav></details>
+  </div>
+</header>
+<main id="main" class="container note-article">
+  <a class="back-link" href="../#notes">← Back to the workbench</a>
+  <header class="article-head">
+    <span class="eyebrow">Field note 001 · 27 October 2026 · Worked example</span>
+    <h1>Why a passing energy balance is <em>not</em> proof.</h1>
+    <p class="lead">A perfectly closed balance tells you something useful. The trouble starts when you ask it to tell you more than it knows.</p>
+    <p class="byline">Abhijith Sivaprasadan · Open Energy Methods</p>
+  </header>
+  <article class="article-prose">
+    <h2>Start with a boring compressor.</h2>
+    <p>In EnerLint's hand-constructed reference case, the compressor has 2 kg/s flowing in and out. The declared specific enthalpy rises from 300 to 420 kJ/kg. Heat input is zero; shaft work is supplied to the compressor.</p>
+    <p>Using the chosen convention—positive shaft work <em>out</em> of a control volume—the steady first-law residual is:</p>
+    <div class="equation-panel">
+      <span class="label">Declared check · kinetic/potential effects neglected</span>
+      <div class="formula">R<sub>E</sub> = Σṁh<sub>in</sub> − Σṁh<sub>out</sub> + Q̇<sub>in</sub> − Ẇ<sub>out</sub></div>
+      <div class="mono worked-equation">= 2 × 300,000 − 2 × 420,000 − (−240,000) = 0 W</div>
+    </div>
+    <p>So far, so good. Both the mass balance and energy balance close.</p>
+    <h2>Now change the answer without breaking the equation.</h2>
+    <p>Suppose the intended reference operating point remains the original one. I alter the exported mass flows and compressor shaft work together, multiplying each by 1.1. The enthalpy values stay unchanged. The new values are 2.2 kg/s and −264 kW.</p>
+    <div class="equation-panel escape-panel">
+      <span class="label">Compensating perturbation · known escape</span>
+      <div class="mono worked-equation">2.2 × 300,000 − 2.2 × 420,000 − (−264,000) = 0 W</div>
+      <p><span class="chip chip-warning">PASS_IN_SCOPE</span> <span class="small">Both declared balances still close.</span></p>
+    </div>
+    <p>The checker is not broken. It is doing exactly the check I gave it. Conservation alone cannot distinguish these two internally consistent operating points. Whether the second is wrong requires another source of evidence—an independently specified operating point, a component map, a measurement, or another justified reference.</p>
+    <h2>What this changes for EnerLint.</h2>
+    <p>One test is deliberately designed to remain undetected. Keeping that case visible is more informative than presenting six flagged mutations as a detection percentage. The six were selected by the developer; they are not a representative sample of mistakes in real energy models.</p>
+    <p>This is why I want EnerLint reports to say <code>PASS_IN_SCOPE</code>, not just <code>VALID</code>. A check has a boundary, a tolerance, a set of assumptions, and a list of things it never examined.</p>
+    <h2>The next question is harder.</h2>
+    <p>Can an output-level tool catch errors that a properly configured native solver or diagnostics package would miss, when both are given equivalent information? That comparison is still open. If the answer is no for a particular workflow, improving the existing tool may make more sense than inventing another one.</p>
+    <p>For now this is a worked synthetic example, not evidence of industrial fault-detection performance or model validation. The point is to make the limitation inspectable.</p>
+  </article>
+  <aside class="source-strip">
+    <span class="eyebrow">Follow the evidence</span>
+    <p>Every number here is drawn from EnerLint's open hand-constructed compressor case and benchmark protocol. The compensating perturbation appears in the benchmark script.</p>
+    <div class="doc-links"><a href="https://github.com/Open-Energy-Methods/enerlint/blob/main/examples/steady_compressor.json">Reference input ↗</a><a href="https://github.com/Open-Energy-Methods/enerlint/blob/main/scripts/run_foundation_benchmark.py">Benchmark script ↗</a><a href="https://github.com/Open-Energy-Methods/enerlint/blob/main/docs/RESULTS.md">Recorded results ↗</a><a href="https://github.com/Open-Energy-Methods/enerlint/issues/18">Comparison experiment ↗</a></div>
+  </aside>
+  <p class="article-end"><a href="../">← Back to Open Energy Methods</a></p>
+</main>
+<footer class="site-footer"><div class="container footer-bottom"><span>Open Energy Methods · Field notes</span><span>Open methods. Explicit limits.</span></div></footer>
+</body>
+</html>
