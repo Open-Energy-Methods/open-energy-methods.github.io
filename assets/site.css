@@ -131,3 +131,22 @@ pre{margin:0;max-width:100%;white-space:pre;overflow:auto;padding:20px;font-size
 @media(max-width:600px){.container{width:calc(100% - 36px)}.brand img{width:170px}.hero{padding-block:52px}.hero-copy{gap:19px}h1{font-size:clamp(2.35rem,10.5vw,3.1rem)}.section{padding-block:52px}.two-up{grid-template-columns:1fr}.scope-panel{padding:23px 20px}.project{padding:22px 18px;gap:28px}.project-title h3{font-size:2.25rem}.evidence-body{padding:15px}.evidence-levels{grid-template-columns:repeat(2,minmax(0,1fr))}.level{min-height:137px}.agenda .table{min-width:580px}.footer-grid{grid-template-columns:1fr;gap:24px}.footer-grid .footer-column:last-child{grid-column:auto}.footer-bottom{flex-direction:column}.review-panel{padding:21px 20px}}
 @media(max-width:370px){.evidence-levels{grid-template-columns:1fr}.btn{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}}
+
+/* Window breathing room — give the site a deliberate inset instead of
+   allowing the header/sections/footer to sit flush against browser edges.
+   Outer space is decorative; content remains inside its own max-width grid. */
+:root{--window-gutter:clamp(12px,1.5vw,28px)}
+html{background:#E9EEEB;scroll-padding-top:calc(120px + var(--window-gutter))}
+body{
+  margin:var(--window-gutter);
+  border:1px solid var(--line);
+  border-radius:10px;
+  box-shadow:0 12px 42px rgba(7,27,46,.06);
+}
+.site-header{top:var(--window-gutter);border-radius:9px 9px 0 0}
+.nav-shell{padding-block:12px}
+.site-footer{border-radius:0 0 9px 9px}
+@media(max-width:600px){
+  :root{--window-gutter:8px}
+  .nav-shell{padding-block:9px}
+}
