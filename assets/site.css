@@ -233,3 +233,35 @@ body{
   .note-row strong{font-size:1.12rem}
 }
 @media(prefers-reduced-motion:reduce){.note-row{transition:none}}
+
+
+/* Technical field notes: long-form reading without a corporate card stack. */
+.note-article{max-width:950px;padding-block:48px 90px}
+.back-link{font-family:var(--font-mono);font-size:.82rem;text-decoration:none}
+.article-head{border-bottom:1px solid var(--line-strong);padding:50px 0 36px;margin-bottom:38px}
+.article-head h1{font-size:clamp(2.5rem,5.5vw,4.7rem);max-width:900px;margin:13px 0 22px}
+.article-head h1 em{color:var(--teal-text)}
+.article-head .lead{max-width:65ch}
+.byline{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);margin:24px 0 0}
+.article-prose{max-width:740px;margin-inline:auto}
+.article-prose h2{font-size:clamp(1.55rem,2.5vw,2.05rem);margin:50px 0 16px;max-width:30ch}
+.article-prose p{font-size:1.07rem;line-height:1.85;margin:0 0 19px}
+.article-prose code{font-family:var(--font-mono);font-size:.85em;color:var(--navy)}
+.equation-panel{padding:27px 30px;margin:26px 0 30px;background:#F3F5F0;border-left:3px solid var(--teal);overflow-x:auto}
+.equation-panel .label{display:block;margin-bottom:14px}
+.equation-panel .formula{font-family:Georgia,serif;font-size:clamp(1.15rem,2vw,1.58rem);white-space:normal;margin-bottom:15px;color:var(--navy)}
+.worked-equation{font-size:.87rem;line-height:1.8;overflow-wrap:anywhere;color:var(--ink)}
+.escape-panel{background:#EAF0EA;border-left-color:var(--navy)}
+.escape-panel p{margin:14px 0 0;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.source-strip{border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line);padding:28px 0;margin-top:65px}
+.source-strip p{max-width:75ch}
+.source-strip .doc-links{margin-top:18px}
+.article-end{margin-top:25px;font-family:var(--font-mono);font-size:.82rem}
+@media(max-width:600px){
+  .note-article{padding-block:32px 60px}
+  .article-head{padding:30px 0 24px}
+  .article-head h1{font-size:clamp(2.2rem,10vw,3.2rem)}
+  .article-prose p{font-size:1rem;line-height:1.75}
+  .equation-panel{padding:19px 16px}
+  .worked-equation{font-size:.75rem}
+}
