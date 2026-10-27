@@ -12,6 +12,10 @@ Static HTML/CSS, no JavaScript build step, no telemetry or cookies. GitHub Pages
 - `assets/site.css` — responsive styles based on the supplied OEM design tokens (navy #0C2B47, teal #3B787E, IBM Plex / Outfit).
 - Brand mark is served from the canonical SVG maintained in `Open-Energy-Methods/.github/assets/brand`.
 
+## Website UI/UX issues
+
+See the [prioritized UI/UX backlog](docs/UI_UX_BACKLOG.md) and [website issue tracker](https://github.com/Open-Energy-Methods/open-energy-methods.github.io/issues). Issues are grouped by P0/P1/P2 impact and estimated engineering effort. File website bugs here, and EnerLint scientific/code bugs in the [EnerLint tracker](https://github.com/Open-Energy-Methods/enerlint/issues).
+
 ## Local preview
 ```sh
 python -m http.server 8000
