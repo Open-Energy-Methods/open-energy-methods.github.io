@@ -239,3 +239,25 @@
 @media(prefers-reduced-motion:reduce){
  .workbench-page .wb-btn{transition:none}
 }
+
+.workbench-page .wb-notes-intro{margin-bottom:32px}
+.workbench-page .wb-feature .wb-feature-stats .wb-stat-num{color:#fff}
+
+/* Field-note continuity: the existing technical article remains readable,
+   adopting the same paper/ink palette without turning formal claims into scribbles. */
+.workbench-note-page{
+  --paper:#F6F1E5;--white:#FCF9F0;--subtle:#EDE6D4;
+  --line:#DAD1BA;--line-strong:#B6AC97;--ink:#0C2B47;
+  --secondary:#43555F;--muted:#52616A;--teal-text:#2F6468;
+  background:#F6F1E5;border-color:#DAD1BA;
+}
+.workbench-note-page .site-header{background:#F6F1E5}
+.workbench-note-page .site-footer{background:#0C2B47;color:#F6F1E5;border-color:#577385}
+.workbench-note-page .site-footer .footer-bottom{color:#D7E1E3}
+.workbench-note-page .note-article{background:#F6F1E5}
+.workbench-note-page .article-head{border-bottom-color:#DAD1BA}
+.workbench-note-page .article-head .lead{font-family:"Newsreader",Georgia,serif;font-size:1.36rem}
+.workbench-note-page .equation-panel{background:#FCF9F0;border-color:#3B787E}
+.workbench-note-page .escape-panel{background:#EDE6D4;border-color:#0C2B47}
+.workbench-note-page .article-prose h2{letter-spacing:-.022em}
+.workbench-note-page .source-strip{border-color:#DAD1BA}
